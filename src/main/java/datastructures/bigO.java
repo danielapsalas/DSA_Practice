@@ -21,4 +21,12 @@ public class bigO {
             }
         }
     }
+
+    //O(1) - in Java coding represents constant time complexity, where the algorithm's runtime remains constant regardless of the size of the input. It is considered highly efficient and desirable.
+    public static int printItems3(int n){
+        return n + n;
+    }
+
+    //O(log n)  in Java coding represents logarithmic time complexity, where the runtime of an algorithm increases logarithmically with the size of the input. It often occurs in algorithms that repeatedly divide the input in half or perform binary search-like operations.
+
 }
