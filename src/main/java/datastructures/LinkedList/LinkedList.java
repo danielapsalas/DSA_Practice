@@ -25,6 +25,26 @@ public class LinkedList {
         }
     }
 
+    //TO DO - working on append
+    //Create a new node
+    //The last item in the linked list needs to point to it
+    //Tail needs to point to it
+    //If the linked list is empty
+    //have head and tail point to the new node
+    public void append(int value) {
+        Node newNode = new Node(value);
+
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else{
+            tail.next = newNode;
+            tail = newNode;
+        }
+        length++;
+    }
+
+
     public void getHead() {
         System.out.println("Head: " + head.value);
     }
@@ -36,4 +56,5 @@ public class LinkedList {
     public void getLength() {
         System.out.println("Length: " + length);
     }
+
 }
