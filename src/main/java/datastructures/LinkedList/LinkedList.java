@@ -45,6 +45,33 @@ public class LinkedList {
     }
 
 
+    //TO DO - working on remove last
+    //Code for there's multiple items, when its null,
+    // and when there's only one item
+    public Node removeLast() {
+        if (length == 0) { //if its null or empty
+           return null;
+        }
+
+        Node pre = head;
+        Node temp = head;
+
+        while (temp.next != null){
+            pre = temp;
+            temp = temp.next;
+        }
+        tail = pre;
+        tail.next = null;
+        length--;
+
+        if(length == 0){
+            head = null;
+            tail = null;
+        }
+
+        return temp;
+    }
+
     public void getHead() {
         System.out.println("Head: " + head.value);
     }
