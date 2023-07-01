@@ -196,6 +196,24 @@ public class LinkedList {
         return temp; // return the removed node
     }
 
+    //TO DO - reverse
+    public void reverse() {
+        Node temp = head;
+        head = tail;
+        tail = temp; // swapping head and tail
+
+        Node after = temp.next;
+        Node before = null;
+
+        for (int i = 0; i < length; i++) {
+            after = temp.next; // saving reference to the next node
+            temp.next = before; // reversing the next pointer of current node
+            before = temp; // updating before to current node
+            temp = after; // updating temp to next node
+        }
+    }
+
+
 
     public void getHead() {
         System.out.println("Head: " + head.value);
