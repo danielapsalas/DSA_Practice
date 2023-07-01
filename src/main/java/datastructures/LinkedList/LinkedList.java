@@ -5,6 +5,16 @@ public class LinkedList {
     private Node tail;
     private int length;
 
+    private static class Node {
+        int value;
+        Node next;
+
+        public Node(int value) {
+            this.value = value;
+            this.next = null;
+        }
+    }
+
     public LinkedList(int value) {
         Node newNode = new Node(value); //the new keyword runs the constructor and creates a node, by setting this equal we are pointing newNode to the Node we just created
         head = newNode; //this lets head point to the newNode
@@ -25,6 +35,8 @@ public class LinkedList {
         }
     }
 
+
+
     //TO DO - working on append
     //Create a new node
     //The last item in the linked list needs to point to it
@@ -43,6 +55,7 @@ public class LinkedList {
         }
         length++;
     }
+
 
 
     //TO DO - working on remove last
@@ -73,6 +86,7 @@ public class LinkedList {
     }
 
 
+
     //TO DO - Pre-pend
     //Create a Node
     //We need the new node to point to the same node head points to(the same Node head points to)
@@ -90,6 +104,8 @@ public class LinkedList {
         }
         length++;
     }
+
+
 
     //TO DO - removing first Node
     //move head to next node
@@ -114,6 +130,8 @@ public class LinkedList {
         return temp;
     }
 
+
+
     //TO DO - get method
     //get a node at a particular index
     public Node get(int index){
@@ -130,6 +148,8 @@ public class LinkedList {
         return temp;//returning the index we were looking for
     }
 
+
+
     //TO DO - set method
     //set the value of a node this is at a particular index
     //return boolean on whether it was set or not
@@ -143,8 +163,9 @@ public class LinkedList {
 
     }
 
-    //TO DO - insert method
 
+
+    //TO DO - insert method
     public boolean insert(int index, int value){
         if(index < 0 || index >= length){ //making sure the index is in range
             return false; //that index wasnt found
@@ -167,6 +188,7 @@ public class LinkedList {
         length++;
         return true;
     }
+
 
 
 //    TO DO - remove method
@@ -196,6 +218,8 @@ public class LinkedList {
         return temp; // return the removed node
     }
 
+
+
     //TO DO - reverse
     public void reverse() {
         Node temp = head;
@@ -212,6 +236,27 @@ public class LinkedList {
             temp = after; // updating temp to next node
         }
     }
+
+
+
+    //TO DO: find middle
+    //find the middle node, if its even print thr second middle node
+    //should use a slow and fast pointer to find the middle element
+    public Node findMiddleNode() {
+        Node slow = head;          // initialize slow pointer to the head
+        Node fast = head;          // initialize fast pointer to the head
+        Node prevSlow = null;      // to keep track of the previous slow pointer position
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next; // move the fast pointer two steps forward
+            prevSlow = slow;       // update the previous slow pointer position
+            slow = slow.next;      // move the slow pointer one step forward
+        }
+
+        return prevSlow != null ? prevSlow.next : slow;    // return the second middle node for even lists, or the first middle node for odd lists
+
+    }
+
 
 
 
