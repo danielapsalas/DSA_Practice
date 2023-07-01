@@ -72,6 +72,25 @@ public class LinkedList {
         return temp;
     }
 
+
+    //TO DO - Pre-pend
+    //Create a Node
+    //We need the new node to point to the same node head points to(the same Node head points to)
+    //Head needs to point to the new node
+    //code for when its null, head and tail will point to the new node
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else{
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+    }
+
     public void getHead() {
         System.out.println("Head: " + head.value);
     }
