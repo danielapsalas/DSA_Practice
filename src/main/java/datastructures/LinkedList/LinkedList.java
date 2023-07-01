@@ -242,6 +242,24 @@ public class LinkedList {
     //TO DO: find middle
     //find the middle node, if its even print thr second middle node
     //should use a slow and fast pointer to find the middle element
+    public Node findMiddleNode() {
+        Node slow = head;          // initialize slow pointer to the head
+        Node fast = head;          // initialize fast pointer to the head
+        Node prevSlow = null;      // to keep track of the previous slow pointer position
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next; // move the fast pointer two steps forward
+            prevSlow = slow;       // update the previous slow pointer position
+            slow = slow.next;      // move the slow pointer one step forward
+        }
+
+        return prevSlow != null ? prevSlow.next : slow;    // return the second middle node for even lists, or the first middle node for odd lists
+
+    }
+
+
+
+    //TO DO - Has loop
     public boolean hasLoop() {
         Node slow = head;  // initialize the slow pointer to the head of the linked list
         Node fast = head;  // initialize the fast pointer to the head of the linked list
@@ -257,11 +275,6 @@ public class LinkedList {
 
         return false;  // no loop found in the linked list
     }
-
-
-
-
-    //TO DO -
 
 
     public void getHead() {
