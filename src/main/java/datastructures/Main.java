@@ -71,6 +71,18 @@ public class Main {
 //        insertLinked.printList();
 
 
+//        //trying the removed method
+//        LinkedList removeLinked = new LinkedList(11);
+//        removeLinked.append(3);
+//        removeLinked.append(23);
+//        removeLinked.append(7);
+//        removeLinked.printList();
+//
+//        System.out.println("Removed");
+//        removeLinked.remove(2);
+//        removeLinked.printList();
+
+
 
     }
 }
