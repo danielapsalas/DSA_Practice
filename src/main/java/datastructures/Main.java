@@ -43,7 +43,7 @@ public class Main {
 
 
 
-//        //trying to find the index
+//        //trying to find the index/get
 //        LinkedList findIndexLinked = new LinkedList(0);
 //        findIndexLinked.append(1);
 //        findIndexLinked.append(2);
@@ -64,7 +64,11 @@ public class Main {
 //        setIndexLinked.printList();
 
 
-        //trying the insert method
+//        //trying the insert method
+//        LinkedList insertLinked = new LinkedList(0);
+//        insertLinked.append(2);
+//        insertLinked.insert(1, 1);
+//        insertLinked.printList();
 
 
 

@@ -169,6 +169,24 @@ public class LinkedList {
     }
 
 
+    //TO DO - remove method
+//    public Node remove(int index){
+//        if(index < 0 || index >= length){ //making sure the index is in range
+//            return null; //that index wasnt found
+//        }
+//
+//        if(index == 0){
+//            return removeFirst();
+//        }
+//
+//        if(index == length - 1){
+//            return removeLast();
+//        }
+//
+//
+//
+//        return temp;
+//    }
 
     public void getHead() {
         System.out.println("Head: " + head.value);
