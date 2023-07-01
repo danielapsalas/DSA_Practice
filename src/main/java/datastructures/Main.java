@@ -39,5 +39,14 @@ public class Main {
 //        System.out.println(removeFirstLinked.removeFirst());
 //        removeFirstLinked.printList();
 
+//        //trying to find the index
+//        LinkedList findIndexLinked = new LinkedList(0);
+//        findIndexLinked.append(1);
+//        findIndexLinked.append(2);
+//        findIndexLinked.append(3);
+//        System.out.println(findIndexLinked.get(2) + "\n");
+//        findIndexLinked.printList();
+
+
     }
 }

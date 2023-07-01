@@ -114,6 +114,24 @@ public class LinkedList {
         return temp;
     }
 
+    //TO DO - get method
+    //get a node at a particular index
+    public Node get(int index){
+        if(index < 0 || index >= length){ //making sure the index is in range
+            return null; //that index wasnt found
+        }
+
+        Node temp = head; //need to make a variable we can return
+
+        for(int i = 0; i < index; i++){ //looking for the index with temp
+            temp = temp.next;//we'll move the temp forward(looking through the indexes
+        }
+
+        return temp;//returning the index we were looking for
+    }
+
+
+
     public void getHead() {
         System.out.println("Head: " + head.value);
     }
