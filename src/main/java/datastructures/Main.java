@@ -27,5 +27,17 @@ public class Main {
 //        prependLinked.prepend(1);
 //        prependLinked.printList();
 
+////        //trying remove first method
+//        LinkedList removeFirstLinked = new LinkedList(2);
+//        removeFirstLinked.append(3);
+//
+//        //2 items - returns 2 Node
+//        System.out.println(removeFirstLinked.removeFirst();
+//        //1 item - returns 1 Node
+//        System.out.println(removeFirstLinked.removeFirst());
+//        //0 item - returns 0 Node
+//        System.out.println(removeFirstLinked.removeFirst());
+//        removeFirstLinked.printList();
+
     }
 }

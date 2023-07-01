@@ -91,6 +91,29 @@ public class LinkedList {
         length++;
     }
 
+    //TO DO - removing first Node
+    //move head to next node
+    //remove the first node
+    //code for if theres only one node
+    //code for if theres no node
+    public Node removeFirst() {
+        if (length == 0) { //if its null or empty
+            return null;
+        }
+
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        length--;
+
+        if(length == 0){
+            head = null;
+            tail = null;
+        }
+
+        return temp;
+    }
+
     public void getHead() {
         System.out.println("Head: " + head.value);
     }
