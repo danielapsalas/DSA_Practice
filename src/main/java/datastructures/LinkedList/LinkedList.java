@@ -130,6 +130,44 @@ public class LinkedList {
         return temp;//returning the index we were looking for
     }
 
+    //TO DO - set method
+    //set the value of a node this is at a particular index
+    //return boolean on whether it was set or not
+    public boolean set(int index, int value){
+        Node temp = get(index);
+        if(temp != null){
+            temp.value = value;
+            return true;
+        }
+        return false;
+
+    }
+
+    //TO DO - insert method
+
+    public boolean insert(int index, int value){
+        if(index < 0 || index >= length){ //making sure the index is in range
+            return false; //that index wasnt found
+        }
+
+        if(index == 0){//adding mode the index of 0
+            prepend(value);
+            return true;
+        }
+
+        if(index == length){//adding node at the end
+            append(value);
+            return true;
+        }
+
+        Node newNode = new Node(value); //the new node we are adding
+        Node temp = get(index - 1); //puts it at one before the index
+        newNode.next = temp.next; //we want the new node to point to the next node
+        temp.next = newNode;//now the previous node is equal to the new node
+        length++;
+        return true;
+    }
+
 
 
     public void getHead() {

@@ -27,6 +27,8 @@ public class Main {
 //        prependLinked.prepend(1);
 //        prependLinked.printList();
 
+
+
 ////        //trying remove first method
 //        LinkedList removeFirstLinked = new LinkedList(2);
 //        removeFirstLinked.append(3);
@@ -39,6 +41,8 @@ public class Main {
 //        System.out.println(removeFirstLinked.removeFirst());
 //        removeFirstLinked.printList();
 
+
+
 //        //trying to find the index
 //        LinkedList findIndexLinked = new LinkedList(0);
 //        findIndexLinked.append(1);
@@ -46,6 +50,22 @@ public class Main {
 //        findIndexLinked.append(3);
 //        System.out.println(findIndexLinked.get(2) + "\n");
 //        findIndexLinked.printList();
+
+
+//        //trying the set method
+//        LinkedList setIndexLinked = new LinkedList(11);
+//
+//        setIndexLinked.append(3);
+//        setIndexLinked.append(23);
+//        setIndexLinked.append(7);
+//
+//        setIndexLinked.set(1,4);
+//
+//        setIndexLinked.printList();
+
+
+        //trying the insert method
+
 
 
     }
