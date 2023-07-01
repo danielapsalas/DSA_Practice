@@ -277,6 +277,29 @@ public class LinkedList {
     }
 
 
+
+    //TO DO - Kth Node
+    public Node findKthFromEnd(int k) {
+        Node slow = head;  // initialize the slow pointer to the head of the linked list
+        Node fast = head;  // initialize the fast pointer to the head of the linked list
+
+        for (int i = 0; i < k; i++) {
+            if (fast == null) {
+                return null;  // if the fast pointer reaches the end before reaching k steps, return null
+            }
+            fast = fast.next;  // move the fast pointer k steps forward
+        }
+
+        while (fast != null) {
+            slow = slow.next;  // move the slow pointer one step forward
+            fast = fast.next;  // move the fast pointer one step forward
+        }
+
+        return slow;  // return the kth node from the end
+    }
+
+
+
     public void getHead() {
         System.out.println("Head: " + head.value);
     }
