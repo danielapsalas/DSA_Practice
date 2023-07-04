@@ -1,5 +1,8 @@
 package datastructures.LinkedList;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -337,44 +340,35 @@ public class LinkedList {
     }
 
 //    TO DO: Partition
-    public void partitionList(int x) {
-        if (head == null) {
-            return; // If the linked list is empty, return
-        }
+    public void removeDuplicates() {
+        // Create a set to store unique values
+        Set<Integer> values = new HashSet<>();
 
+        // Initialize the previous node as null
+        Node previous = null;
 
-        // dummy node for the list with values less than x
-        Node lessThanHead = new Node(0);
-        // dummy node for the list with values greater than or equal to x
-        Node greaterThanOrEqualHead = new Node(0);
-
-
-        // track the last node in the list with values less than x
-        Node lessThanTail = lessThanHead;
-        // track the last node in the list with values greater than or equal to x
-        Node greaterThanOrEqualTail = greaterThanOrEqualHead;
-
-
-        // start traversing from the head of the input list
+        // Start at the head of the linked list
         Node current = head;
 
+        // Iterate through the list until the end
         while (current != null) {
-            if (current.value < x) {
-                // append the current node to the list with values less than x
-                lessThanTail.next = current;
-                lessThanTail = current;
+            // Check if the value is a duplicate
+            if (values.contains(current.value)) {
+                // Remove the current node from the list
+                previous.next = current.next;
+
+                // Decrement the list length by 1
+                length -= 1;
             } else {
-                // append the current node to the list with values greater than or equal to x
-                greaterThanOrEqualTail.next = current;
-                greaterThanOrEqualTail = current;
+                // Add the unique value to the set
+                values.add(current.value);
+
+                // Update previous to the current node
+                previous = current;
             }
-            current = current.next; // move to the next node
+            // Move to the next node in the list
+            current = current.next;
         }
-
-        greaterThanOrEqualTail.next = null; // mark the end of the list with values greater than or equal to x
-        lessThanTail.next = greaterThanOrEqualHead.next; // connect the two lists
-
-        head = lessThanHead.next; // update the head to the first node in the list with values less than x
     }
 
 
