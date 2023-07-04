@@ -300,6 +300,43 @@ public class LinkedList {
 
 
 
+    //TO DO - Reverse Between
+    public void reverseBetween(int m, int n) {
+        if (m >= n || head == null) {
+            return;  // no nodes to reverse or invalid indices
+        }
+
+        Node prev = null;  // pointer to track the previous node
+        Node curr = head;  // pointer to traverse the list
+
+        // move curr to the node at position m
+        for (int i = 0; i < m && curr != null; i++) {
+            prev = curr;  // update the previous node
+            curr = curr.next;  // move to the next node
+        }
+
+        Node prevM = prev;  // node before the sublist to be reversed
+        Node currM = curr;  // first node of the sublist to be reversed
+
+        // reverse the sublist nodes between m and n
+        for (int i = m; i <= n && curr != null; i++) {
+            Node next = curr.next;  // temporary variable to store the next node
+            curr.next = prev;  // reverse the next pointer of the current node
+            prev = curr;  // update the previous node
+            curr = next;  // move to the next node
+        }
+
+        // connect the reversed sublist with the rest of the list
+        if (prevM != null) {
+            prevM.next = prev;  // connect the previous node of sublist with the first reversed node
+        } else {
+            head = prev;  // update the head node if sublist starts from the beginning
+        }
+
+        currM.next = curr;  // connect the end of the sublist with the next node
+    }
+
+
     public void getHead() {
         System.out.println("Head: " + head.value);
     }
