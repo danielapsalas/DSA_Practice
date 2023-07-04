@@ -83,15 +83,15 @@ public class Main {
 //        removeLinked.printList();
 
         //trying the reverse method
-        LinkedList reverseLinked = new LinkedList(1);
-        reverseLinked.append(2);
-        reverseLinked.append(3);
-        reverseLinked.append(4);
-        reverseLinked.printList();
-
-        System.out.println("Reversed");
-        reverseLinked.reverse();
-        reverseLinked.printList();
+//        LinkedList reverseLinked = new LinkedList(1);
+//        reverseLinked.append(2);
+//        reverseLinked.append(3);
+//        reverseLinked.append(4);
+//        reverseLinked.printList();
+//
+//        System.out.println("Reversed");
+//        reverseLinked.reverse();
+//        reverseLinked.printList();
 
 
 

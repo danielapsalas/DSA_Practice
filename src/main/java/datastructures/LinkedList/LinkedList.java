@@ -336,6 +336,48 @@ public class LinkedList {
         currM.next = curr;  // connect the end of the sublist with the next node
     }
 
+//    TO DO: Partition
+    public void partitionList(int x) {
+        if (head == null) {
+            return; // If the linked list is empty, return
+        }
+
+
+        // dummy node for the list with values less than x
+        Node lessThanHead = new Node(0);
+        // dummy node for the list with values greater than or equal to x
+        Node greaterThanOrEqualHead = new Node(0);
+
+
+        // track the last node in the list with values less than x
+        Node lessThanTail = lessThanHead;
+        // track the last node in the list with values greater than or equal to x
+        Node greaterThanOrEqualTail = greaterThanOrEqualHead;
+
+
+        // start traversing from the head of the input list
+        Node current = head;
+
+        while (current != null) {
+            if (current.value < x) {
+                // append the current node to the list with values less than x
+                lessThanTail.next = current;
+                lessThanTail = current;
+            } else {
+                // append the current node to the list with values greater than or equal to x
+                greaterThanOrEqualTail.next = current;
+                greaterThanOrEqualTail = current;
+            }
+            current = current.next; // move to the next node
+        }
+
+        greaterThanOrEqualTail.next = null; // mark the end of the list with values greater than or equal to x
+        lessThanTail.next = greaterThanOrEqualHead.next; // connect the two lists
+
+        head = lessThanHead.next; // update the head to the first node in the list with values less than x
+    }
+
+
 
     public void getHead() {
         System.out.println("Head: " + head.value);
