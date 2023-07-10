@@ -173,6 +173,29 @@ public class LinkedListPractice {
     }
 
 
+//    Prepend
+//    Implement a method called prepend that adds a new node at the beginning of the linked list.
+//    Return type: void
+//
+//    Accept an integer value as an argument, which will be the value of the new node.
+    public void prepend(int value){
+//      Create a new Node object called newNode with the given value.
+        Node newNode = new Node(value);
+
+//      If the length of the linked list is 0, set both the head and tail pointers of the list to the newNode.
+        if(length == 0){
+            head = newNode;
+            tail = newNode;
+        }else{
+//          If the length of the linked list is greater than 0, perform the following tasks:
+//          Set the next attribute of newNode to the current head node.
+//          Update the head pointer of the list to point to the newNode.
+            newNode.next = head;
+            head = newNode;
+        }
+//      Increment the length attribute of the list by 1.
+        length++;
+    }
 }
 
 
