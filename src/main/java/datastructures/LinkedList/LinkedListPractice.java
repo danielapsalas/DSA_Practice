@@ -222,6 +222,27 @@ public class LinkedListPractice {
         return temp;
 
     }
+
+
+//    Set
+//    Implement a method called set that updates the value of a node in the linked list by its index.
+//
+//    Return type: boolean
+//    Accept an integer index as an argument, representing the index of the node to be updated.
+//    Accept an integer value as an argument, representing the new value to set for the node at the specified index.
+    public boolean set(int index, int value){
+//      Call the get method with the provided index to obtain a pointer to the node at the specified index.
+        Node temp = get(index);
+
+//      If the node exists (i.e., the get method returns a non-null value), update the node's value with the provided value and return true.
+        if(temp != null){
+            temp.value = value;
+            return true;
+        }
+
+//      If the node does not exist (i.e., the get method returns null), return false.
+        return false;
+    }
 }
 
 
