@@ -146,5 +146,33 @@ public class LinkedListPractice {
         return temp;
     }
 
+//    Remove First
+//    Implement a method called removeFirst that removes the first node from the linked list and returns it.
+    public Node removeFirst(){
+//      If the length of the linked list is 0, return null.
+        if(length == 0){
+            return null;
+        }
+
+//      Create a temporary Node object called temp and set it to the current head node.
+        Node temp = head;
+//      Update the head pointer of the list to point to the next node in the list.
+        head = head.next;
+//      Set the next attribute of temp to null
+        temp.next = null;
+//      Decrement the length attribute of the list by 1.
+        length--;
+
+//      If the length of the list becomes 0 after removing the first node, set the tail pointer to null.
+        if(length == 0){
+            tail = null;
+        }
+
+//      Return the removed temp node.
+        return temp;
+    }
+
 
 }
+
+
