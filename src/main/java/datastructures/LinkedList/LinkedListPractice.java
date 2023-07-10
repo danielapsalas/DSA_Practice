@@ -173,6 +173,7 @@ public class LinkedListPractice {
     }
 
 
+
 //    Prepend
 //    Implement a method called prepend that adds a new node at the beginning of the linked list.
 //    Return type: void
@@ -195,6 +196,31 @@ public class LinkedListPractice {
         }
 //      Increment the length attribute of the list by 1.
         length++;
+    }
+
+
+//  Get
+//  Implement a method called get that retrieves a node from the linked list by its index.
+//  Return type: Node
+//
+//  Accept an integer index as an argument, which will be the index of the node to be retrieved.
+    public Node get(int index){
+//      If the index is less than 0 or greater than or equal to the length of the linked list, return null.
+        if(index < 0 || index >= length){
+            return null;
+        }
+
+//      Create a temporary Node object called temp and set it to the current head node.
+        Node temp = head;
+
+//      Iterate through the linked list by updating temp to its next node until the desired index is reached.
+        for(int i = 0; i < index; i++){
+            temp = temp.next;
+        }
+
+//      Return the node located at the specified index.
+        return temp;
+
     }
 }
 
