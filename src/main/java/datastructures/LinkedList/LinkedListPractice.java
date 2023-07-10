@@ -243,6 +243,92 @@ public class LinkedListPractice {
 //      If the node does not exist (i.e., the get method returns null), return false.
         return false;
     }
+
+
+
+//    Insert
+//    Implement a method called insert that inserts a new node at a specified index in the linked list.
+//    Return type: boolean
+
+//    Accept an integer index as an argument, representing the index at which the new node should be inserted.
+//    Accept an integer value as an argument, representing the value of the new node.
+    public boolean insert(int index, int value){
+
+//        If the index is less than 0 or greater than the length of the list, return false.
+        if(index < 0 || index >= length){
+            return false;
+        }
+
+//        If the index is 0, call the prepend method with the provided value and return true.
+        if(index == 0){
+            prepend(value);
+            return true;
+        }
+
+//        If the index is equal to the length of the list, call the append method with the provided value and return true.
+        if(index == length){
+            append(value);
+            return true;
+        }
+//
+//        Create a new Node object called newNode with the provided value.
+        Node newNode = new Node(value);
+
+//        Call the get method with the index minus 1 to obtain the node before the specified index.
+        Node temp = get(index - 1);
+
+//        Update the next attribute of the newNode to point to the next attribute of the node before the specified index.
+        newNode.next = temp.next;
+
+//        Update the next attribute of the node before the specified index to point to the newNode.
+        temp.next = newNode;
+
+//        Increment the length attribute of the list by 1.
+        length++;
+        return true;
+
+    }
+
+
+
+    //    Remove
+    //    Implement a method called remove that removes a node at a specified index in the linked list.
+    //
+    //    Return type: Node (the node that has been removed)
+    //  Accept an integer index as an argument, representing the index of the node to be removed.
+    public Node remove(int index){
+        //If the index is less than 0 or greater than or equal to the length of the list, return null.
+        if(index < 0 || index >= length){
+            return null;
+        }
+
+        //If the index is 0, call the removeFirst method and return its result.
+        if(index == 0){
+            return removeFirst();
+        }
+
+        //If the index is equal to the length of the list minus 1, call the removeLast method and return its result.
+        if(index == length - 1){
+            return removeLast();
+        }
+
+        //Call the get method with the index minus 1 to obtain the node before the specified index.
+        Node prev = get(index - 1);
+
+        //Create a temporary Node object called temp and set it to the next attribute of the node before the specified index.
+        Node temp = prev.next;
+
+        //Update the next attribute of the node before the specified index to point to the next attribute of the temporary Node object.
+        prev.next = temp.next;
+
+        //Set the next attribute of the temporary Node object to null.
+        temp.next = null;
+
+        //Decrement the length attribute of the list by 1.
+        length--;
+
+        return temp;
+    }
 }
 
 
