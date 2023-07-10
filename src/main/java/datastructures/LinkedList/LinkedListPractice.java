@@ -3,7 +3,7 @@
 package datastructures.LinkedList;
 
 public class LinkedListPractice {
-
+//    CONSTRUCTOR
 //    A private Node object called head that points to the first node in the linked list.
 //
 //    A private Node object called tail that points to the last node in the linked list.
@@ -83,5 +83,29 @@ public class LinkedListPractice {
             printList();
         }
     }
+
+
+//    APPEND
+//    Accept an integer value as an argument, which will be the value of the new node.
+    public void append(int value){
+//      Create a new Node object called newNode with the given value.
+        Node newNode = new Node(value);
+
+//      If the length of the linked list is 0, set both the head and tail pointers of the list to the newNode.
+        if(length == 0){
+            head = newNode;
+            tail = newNode;
+        }else {
+//          If the length of the linked list is greater than 0, perform the following tasks:
+//          Set the next attribute of the current tail node to the newNode.
+//          Update the tail pointer of the list to point to the newNode.
+            tail.next = newNode;
+            tail = newNode;
+        }
+
+//      Increment the length attribute of the list by 1.
+        length++;
+    }
+
 
 }
