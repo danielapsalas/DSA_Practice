@@ -1,6 +1,6 @@
 //Attempting the problems again for extra practice
 
-package datastructures.LinkedList;
+package datastructures.LinkedLists;
 
 public class LinkedListPractice {
 //    CONSTRUCTOR
@@ -370,6 +370,8 @@ public class LinkedListPractice {
 
         // The method has no return value.
     }
+
+
 }
 
 

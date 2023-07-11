@@ -1,4 +1,4 @@
-package datastructures.LinkedList;
+package datastructures.LinkedLists;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -243,7 +243,7 @@ public class LinkedList {
 
 
     //TO DO: find middle
-    //find the middle node, if its even print thr second middle node
+    //find the middle node, if its even print the second middle node
     //should use a slow and fast pointer to find the middle element
     public Node findMiddleNode() {
         Node slow = head;          // initialize slow pointer to the head
