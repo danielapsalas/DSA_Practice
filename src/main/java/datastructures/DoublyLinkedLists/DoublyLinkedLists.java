@@ -239,4 +239,56 @@ public class DoublyLinkedLists {
         //If the temp node is null, return false to indicate that the operation was unsuccessful.
         return false;
     }
+
+
+
+    // Insert
+    // Implement the insert method that inserts a new node with a given value at a specified index in the doubly linked list.
+
+    // Return type: boolean
+    public boolean insert(int index, int value){
+        //Check if the given index is within the valid range. If the index is less than 0 or greater than the list's length, return false.
+        if(index < 0 || index > length){
+            return false;
+        }
+
+        //If the index is 0, call the prepend method with the given value, and return true.
+        if(index == 0){
+            prepend(value);
+            return true;
+        }
+
+        //If the index is equal to the list's length, call the append method with the given value, and return true.
+        if(index == length){
+            append(value);
+            return true;
+        }
+
+        //Create a new Node object called newNode with the given value.
+        Node newNode = new Node(value);
+
+        //Use the get method to retrieve the node before the given index and store it in a variable called before.
+        Node before = get(index).prev;
+
+        //Set the after variable to the next attribute of the before node.
+        Node after = before.next;
+
+        //Set the after variable to the next attribute of the before node.
+        newNode.prev = before;
+
+        //Set the prev attribute of the newNode to the before node and the next attribute to the after node.
+        newNode.next = after;
+
+        //Update the next attribute of the before node to point to the newNode.
+        before.next = newNode;
+
+        //Update the prev attribute of the after node to point to the newNode.
+        after.prev = newNode;
+
+        //Increment the length of the list.
+        length++;
+
+        //Return true to indicate that the operation was successful.
+        return true;
+    }
 }

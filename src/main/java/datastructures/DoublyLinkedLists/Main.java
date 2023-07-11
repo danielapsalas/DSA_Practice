@@ -71,6 +71,14 @@ public class Main {
 //        myDLL.append(7);
 //        myDLL.set(1, 4);
 //        myDLL.printList();
+
+
+
+//        //Insert
+//        DoublyLinkedLists myDLL = new DoublyLinkedLists(1);
+//        myDLL.append(3);
+//        myDLL.insert(1, 2);
+//        myDLL.printList();
     }
 
 }
