@@ -329,6 +329,47 @@ public class LinkedListPractice {
 
         return temp;
     }
+
+//Reverse
+
+// 	Implement a method called reverse that reverses the order of the nodes in the linked list.
+// When solving the reverse() method, students are not allowed to create a new list or use any additional data structures besides the linked list itself.
+// They must reverse the nodes in the existing linked list by manipulating the pointers between them.
+
+    // Return type: void
+    public void reverse(){
+        // Create a temporary Node object called temp and set it to the head attribute of the list.
+        Node temp = head;
+
+        // Set the head attribute of the list to the current tail attribute.
+        head = tail;
+
+        // Set the tail attribute of the list to the temporary Node object.
+        tail = temp;
+
+        //Create a Node object called after and set it to the next attribute of the temporary Node object.
+        Node after = temp.next;
+
+        // Create a Node object called before and initialize it to null.
+        Node before = null;
+
+        // Loop through the linked list using a for loop with a counter variable i, starting from 0 and ending at the length attribute of the list.
+        for(int i = 0; i < length; i++){
+            //a. Set the after attribute to the next attribute of the temporary Node object.
+            after = temp.next;
+
+            //b. Set the next attribute of the temporary Node object to the before attribute.
+            temp.next = before;
+
+            //c. Set the before attribute to the temporary Node object.
+            before = temp;
+
+            //d. Set the temporary Node object to the after attribute.
+            temp = after;
+        }
+
+        // The method has no return value.
+    }
 }
 
 
