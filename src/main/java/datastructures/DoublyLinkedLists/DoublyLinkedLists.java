@@ -147,6 +147,75 @@ public class DoublyLinkedLists {
 
 
 
+// Remove First
+// Implement the removeFirst method that removes the first node from the doubly linked list and returns it.
+
+    // Return type: Node (the node being removed)
+    public Node removeFirst(){
+        //If the length of the doubly linked list is 0, return null.
+        if(length == 0){
+            return null;
+        }
+
+        //Store the current head node in a temporary variable called temp.
+        Node temp = head;
+
+        //If the length of the doubly linked list is 1:
+        if(length == 1){
+            //Set both the head and tail pointers of the list to null.
+            head = null;
+            tail = null;
+
+            //If the length of the doubly linked list is greater than 1:
+        } else{
+            //Update the head pointer of the list to point to the next node in the list.
+            head = head.next;
+
+            //Set the prev attribute of the new head node to null.
+            head.prev = null;
+
+            //Set the next attribute of the temp node to null.
+            temp.next = null;
+        }
+
+        //Decrement the length attribute of the list by 1.
+        length--;
+
+        //Return the temp node.
+        return temp;
+    }
 
 
+//    Get
+//    Implement the get method that retrieves a node at a given index from the doubly linked list.
+//
+//    Return type: Node
+    public Node get(int index){
+        //If the index is less than 0 or greater than or equal to the length of the doubly linked list, return null.
+        if(index < 0 || index >= length){
+            return null;
+        }
+
+        //Initialize a temp variable to store the node to be retrieved.
+        Node temp = head;
+
+        //If the index is less than half of the list's length:
+        if(index < length/2){
+            //Iterate from the head node to the target index by updating temp to temp.next in each iteration.
+            for(int i = 0; i < index; i++){
+                temp = temp.next;
+            }
+        //If the index is greater than or equal to half of the list's length:
+        }else{
+            //Set temp to the tail node.
+            temp = tail;
+
+            //Iterate from the tail node to the target index by updating temp to temp.prev in each iteration.
+            for(int i = length - 1; i > index; i--){
+                temp = temp.prev;
+            }
+        }
+        //Return the temp node.
+        return temp;
+    }
 }
