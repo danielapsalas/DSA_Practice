@@ -218,4 +218,25 @@ public class DoublyLinkedLists {
         //Return the temp node.
         return temp;
     }
+
+//    set
+//    Implement the set method that updates the value of a node at a given index in the doubly linked list.
+//
+//    Return type: boolean
+    public boolean set(int index, int value){
+        //Use the get method to retrieve the node at the given index and store it in a temp variable.
+        Node temp = get(index);
+
+        //If the temp node is not null, perform the following tasks:
+        if(temp != null){
+            //Update the value of the temp node to the given value.
+            temp.value = value;
+
+            //Return true to indicate that the operation was successful.
+            return true;
+        }
+
+        //If the temp node is null, return false to indicate that the operation was unsuccessful.
+        return false;
+    }
 }

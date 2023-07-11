@@ -61,6 +61,16 @@ public class Main {
 //        System.out.println(myDLL.get(2).value + "\n");
 //
 //        myDLL.printList();
+
+
+
+        //set method
+//        DoublyLinkedLists myDLL = new DoublyLinkedLists(11);
+//        myDLL.append(3);
+//        myDLL.append(23);
+//        myDLL.append(7);
+//        myDLL.set(1, 4);
+//        myDLL.printList();
     }
 
 }
