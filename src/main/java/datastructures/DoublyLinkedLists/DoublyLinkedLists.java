@@ -112,4 +112,41 @@ public class DoublyLinkedLists {
         length--;
         return temp;
     }
+
+
+    //Prepend
+    //Implement the prepend method that adds a new node to the beginning of the doubly linked list.
+
+    //Return type: void
+
+    //Accept an integer value as an argument, which will be the value of the new node.
+    public void prepend(int value){
+        //Create a new Node object called newNode with the given value.
+        Node newNode = new Node(value);
+
+        //If the length of the doubly linked list is 0:
+        if(length == 0){
+            //Set both the head and tail pointers of the list to the newNode.
+            head = newNode;
+            tail = newNode;
+
+            //If the length of the doubly linked list is greater than 0:
+        }else{
+            //Set the next attribute of the newNode to the current head node.
+            newNode.next = head;
+
+            //Set the prev attribute of the current head node to the newNode.
+            head.prev = newNode;
+
+            //Update the head pointer of the list to point to the newNode.
+            head = newNode;
+        }
+        //Increment the length attribute of the list by 1.
+        length++;
+    }
+
+
+
+
+
 }

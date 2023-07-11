@@ -10,10 +10,12 @@ public class Main {
 //        myDLL.getLength();
 //        myDLL.printList();
 
+
 //        //append
 //        DoublyLinkedLists myDLL = new DoublyLinkedLists(1);
 //        myDLL.append(2);
 //        myDLL.printList();
+
 
         //remove last
 //        DoublyLinkedLists myDLL = new DoublyLinkedLists(1);
@@ -28,6 +30,11 @@ public class Main {
 //        //0 items - returns 0 Node
 //        System.out.println(myDLL.removeLast());
 
+        //prepend
+        DoublyLinkedLists myDLL = new DoublyLinkedLists(2);
+        myDLL.append(3);
+        myDLL.prepend(1);
+        myDLL.printList();
     }
 
 }
