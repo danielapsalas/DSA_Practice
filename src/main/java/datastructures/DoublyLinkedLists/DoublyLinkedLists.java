@@ -55,17 +55,20 @@ public class DoublyLinkedLists {
         Node newNode = new Node(value);
 
 //        If the length of the doubly linked list is 0:
-//        Set both the head and tail pointers of the list to the newNode.
         if(length == 0){
             head = newNode;
+//        Set both the head and tail pointers of the list to the newNode.
             tail = newNode;
-        }else{
+
 //          If the length of the doubly linked list is greater than 0:
+        }else{
 //          Set the next attribute of the current tail node to the newNode.
-//          Set the prev attribute of the newNode to the current tail node.
-//          Update the tail pointer of the list to point to the newNode.
             tail.next = newNode;
+
+//          Set the prev attribute of the newNode to the current tail node.
             newNode.prev = tail;
+
+//          Update the tail pointer of the list to point to the newNode.
             tail = newNode;
         }
 
@@ -73,4 +76,40 @@ public class DoublyLinkedLists {
         length++;
     }
 
+
+//    Remove Last
+//    Implement the removeLast method that removes the last node from the doubly linked list and returns it.
+//
+//    Return type: Node (the node that is being removed)
+    public Node removeLast(){
+        // If the length of the doubly linked list is 0, return null.
+        if(length == 0){
+            return null;
+        }
+
+        // Create a temporary Node called temp and set it to the current tail node.
+        Node temp = tail;
+
+        // If the length of the doubly linked list is 1:
+        if(length == 1){
+            // Set both the head and tail pointers of the list to null.
+            head = null;
+            tail = null;
+        }
+
+        //If the length of the doubly linked list is greater than 1:
+        if(length > 1){
+            //Set the tail pointer of the list to the previous node of the current tail node.
+            tail = tail.prev;
+
+            //Set the next attribute of the new tail node to null.
+            tail.next = null;
+
+            //Set the prev attribute of the temp node to null.
+            temp.prev = null;
+        }
+
+        length--;
+        return temp;
+    }
 }

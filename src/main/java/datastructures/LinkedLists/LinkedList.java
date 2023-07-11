@@ -61,7 +61,7 @@ public class LinkedList {
 
 
 
-    //TO DO - working on remove last
+    //TO DO - working on remove last (O of n)
     //Code for there's multiple items, when its null,
     // and when there's only one item
     public Node removeLast() {
