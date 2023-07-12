@@ -371,7 +371,6 @@ public class LinkedListPractice {
         // The method has no return value.
     }
 
-
 }
 
 
