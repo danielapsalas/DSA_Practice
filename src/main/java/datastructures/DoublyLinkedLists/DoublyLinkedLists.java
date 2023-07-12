@@ -291,4 +291,47 @@ public class DoublyLinkedLists {
         //Return true to indicate that the operation was successful.
         return true;
     }
+
+
+
+    //remove
+//    Implement the remove method that removes a node at a specified index from the doubly linked list.
+//
+//    Return type: Node
+    public Node remove(int index){
+        //Check if the given index is within the valid range. If the index is less than 0 or greater than or equal to the list's length, return null.
+        if(index < 0 || index >= length){
+            return null;
+        }
+
+        //If the index is 0, call the removeFirst method and return its result.
+        if(index == 0){
+            return removeFirst();
+        }
+
+        //If the index is equal to the list's length minus 1, call the removeLast method and return its result.
+        if(index == length - 1){
+            return removeLast();
+        }
+
+        //Use the get method to retrieve the node at the given index and store it in a variable called temp.
+        Node temp = get(index);
+
+        //Update the prev attribute of the next node of the temp node to point to the prev node of the temp node.
+        temp.next.prev = temp.prev;
+
+        //Update the next attribute of the prev node of the temp node to point to the next node of the temp node.
+        temp.prev.next = temp.next;
+
+        //Set the next and prev attributes of the temp node to null.
+        temp.next = null;
+        temp.prev = null;
+
+        //Decrement the length of the list.
+        length--;
+
+        //Return the removed node (the temp node).
+        return temp;
+    }
+
 }
