@@ -6,26 +6,26 @@ public class DoublyLinkedLists {
     private Node tail;
     private int length;
 
-    class Node{
+    class Node {
         int value;
         Node next;
         Node prev;
 
-        Node(int value){
+        Node(int value) {
             this.value = value;
         }
     }
 
-    public DoublyLinkedLists(int value){
+    public DoublyLinkedLists(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
         length = 1;
     }
 
-    public void printList(){
+    public void printList() {
         Node temp = head;
-        while(temp != null){
+        while (temp != null) {
             System.out.println(temp.value);
             temp = temp.next;
         }
@@ -49,19 +49,19 @@ public class DoublyLinkedLists {
 //
 //    Return type: void
 
-//    Accept an integer value as an argument, which will be the value of the new node.
-    public void append(int value){
+    //    Accept an integer value as an argument, which will be the value of the new node.
+    public void append(int value) {
 //      Create a new Node object called newNode with the given value.
         Node newNode = new Node(value);
 
 //        If the length of the doubly linked list is 0:
-        if(length == 0){
+        if (length == 0) {
             head = newNode;
 //        Set both the head and tail pointers of the list to the newNode.
             tail = newNode;
 
 //          If the length of the doubly linked list is greater than 0:
-        }else{
+        } else {
 //          Set the next attribute of the current tail node to the newNode.
             tail.next = newNode;
 
@@ -77,13 +77,13 @@ public class DoublyLinkedLists {
     }
 
 
-//    Remove Last
+    //    Remove Last
 //    Implement the removeLast method that removes the last node from the doubly linked list and returns it.
 //
 //    Return type: Node (the node that is being removed)
-    public Node removeLast(){
+    public Node removeLast() {
         // If the length of the doubly linked list is 0, return null.
-        if(length == 0){
+        if (length == 0) {
             return null;
         }
 
@@ -91,14 +91,14 @@ public class DoublyLinkedLists {
         Node temp = tail;
 
         // If the length of the doubly linked list is 1:
-        if(length == 1){
+        if (length == 1) {
             // Set both the head and tail pointers of the list to null.
             head = null;
             tail = null;
         }
 
         //If the length of the doubly linked list is greater than 1:
-        if(length > 1){
+        if (length > 1) {
             //Set the tail pointer of the list to the previous node of the current tail node.
             tail = tail.prev;
 
@@ -120,18 +120,18 @@ public class DoublyLinkedLists {
     //Return type: void
 
     //Accept an integer value as an argument, which will be the value of the new node.
-    public void prepend(int value){
+    public void prepend(int value) {
         //Create a new Node object called newNode with the given value.
         Node newNode = new Node(value);
 
         //If the length of the doubly linked list is 0:
-        if(length == 0){
+        if (length == 0) {
             //Set both the head and tail pointers of the list to the newNode.
             head = newNode;
             tail = newNode;
 
             //If the length of the doubly linked list is greater than 0:
-        }else{
+        } else {
             //Set the next attribute of the newNode to the current head node.
             newNode.next = head;
 
@@ -146,14 +146,13 @@ public class DoublyLinkedLists {
     }
 
 
-
 // Remove First
 // Implement the removeFirst method that removes the first node from the doubly linked list and returns it.
 
     // Return type: Node (the node being removed)
-    public Node removeFirst(){
+    public Node removeFirst() {
         //If the length of the doubly linked list is 0, return null.
-        if(length == 0){
+        if (length == 0) {
             return null;
         }
 
@@ -161,13 +160,13 @@ public class DoublyLinkedLists {
         Node temp = head;
 
         //If the length of the doubly linked list is 1:
-        if(length == 1){
+        if (length == 1) {
             //Set both the head and tail pointers of the list to null.
             head = null;
             tail = null;
 
             //If the length of the doubly linked list is greater than 1:
-        } else{
+        } else {
             //Update the head pointer of the list to point to the next node in the list.
             head = head.next;
 
@@ -186,13 +185,13 @@ public class DoublyLinkedLists {
     }
 
 
-//    Get
+    //    Get
 //    Implement the get method that retrieves a node at a given index from the doubly linked list.
 //
 //    Return type: Node
-    public Node get(int index){
+    public Node get(int index) {
         //If the index is less than 0 or greater than or equal to the length of the doubly linked list, return null.
-        if(index < 0 || index >= length){
+        if (index < 0 || index >= length) {
             return null;
         }
 
@@ -200,18 +199,18 @@ public class DoublyLinkedLists {
         Node temp = head;
 
         //If the index is less than half of the list's length:
-        if(index < length/2){
+        if (index < length / 2) {
             //Iterate from the head node to the target index by updating temp to temp.next in each iteration.
-            for(int i = 0; i < index; i++){
+            for (int i = 0; i < index; i++) {
                 temp = temp.next;
             }
-        //If the index is greater than or equal to half of the list's length:
-        }else{
+            //If the index is greater than or equal to half of the list's length:
+        } else {
             //Set temp to the tail node.
             temp = tail;
 
             //Iterate from the tail node to the target index by updating temp to temp.prev in each iteration.
-            for(int i = length - 1; i > index; i--){
+            for (int i = length - 1; i > index; i--) {
                 temp = temp.prev;
             }
         }
@@ -219,16 +218,16 @@ public class DoublyLinkedLists {
         return temp;
     }
 
-//    set
+    //    set
 //    Implement the set method that updates the value of a node at a given index in the doubly linked list.
 //
 //    Return type: boolean
-    public boolean set(int index, int value){
+    public boolean set(int index, int value) {
         //Use the get method to retrieve the node at the given index and store it in a temp variable.
         Node temp = get(index);
 
         //If the temp node is not null, perform the following tasks:
-        if(temp != null){
+        if (temp != null) {
             //Update the value of the temp node to the given value.
             temp.value = value;
 
@@ -241,25 +240,24 @@ public class DoublyLinkedLists {
     }
 
 
-
     // Insert
     // Implement the insert method that inserts a new node with a given value at a specified index in the doubly linked list.
 
     // Return type: boolean
-    public boolean insert(int index, int value){
+    public boolean insert(int index, int value) {
         //Check if the given index is within the valid range. If the index is less than 0 or greater than the list's length, return false.
-        if(index < 0 || index > length){
+        if (index < 0 || index > length) {
             return false;
         }
 
         //If the index is 0, call the prepend method with the given value, and return true.
-        if(index == 0){
+        if (index == 0) {
             prepend(value);
             return true;
         }
 
         //If the index is equal to the list's length, call the append method with the given value, and return true.
-        if(index == length){
+        if (index == length) {
             append(value);
             return true;
         }
@@ -293,24 +291,23 @@ public class DoublyLinkedLists {
     }
 
 
-
     //remove
 //    Implement the remove method that removes a node at a specified index from the doubly linked list.
 //
 //    Return type: Node
-    public Node remove(int index){
+    public Node remove(int index) {
         //Check if the given index is within the valid range. If the index is less than 0 or greater than or equal to the list's length, return null.
-        if(index < 0 || index >= length){
+        if (index < 0 || index >= length) {
             return null;
         }
 
         //If the index is 0, call the removeFirst method and return its result.
-        if(index == 0){
+        if (index == 0) {
             return removeFirst();
         }
 
         //If the index is equal to the list's length minus 1, call the removeLast method and return its result.
-        if(index == length - 1){
+        if (index == length - 1) {
             return removeLast();
         }
 
@@ -338,7 +335,7 @@ public class DoublyLinkedLists {
 //    LEETCODE PROBLEMS
 
 
-//    DLL: Swap First and Last ( ** Interview Question)
+    //    DLL: Swap First and Last ( ** Interview Question)
 //    Swap First and Last Node Values in a Doubly Linked List.
 //    Given a doubly linked list, write a method called swapFirstLast() that swaps the values of the first and last nodes in the list.
 //    If the length of the list is less than 2, the method should not perform any operation.
@@ -350,10 +347,10 @@ public class DoublyLinkedLists {
 //    No explicit output is returned. However, the method should modify the doubly linked list such that the values of the first and last nodes are swapped.
 //    Constraints:
 //    The doubly linked list may be empty, have only one node, or have two or more nodes.
-    public void swapFirstLast(){
-        if(length < 2){
+    public void swapFirstLast() {
+        if (length < 2) {
             return;
-        }else{
+        } else {
             Node temp = head;
             head = tail;
             tail = temp;
@@ -361,8 +358,7 @@ public class DoublyLinkedLists {
     }
 
 
-
-//    DLL: Reverse ( ** Interview Question)
+    //    DLL: Reverse ( ** Interview Question)
 //    Implement a method called reverse() that reverses the order of the nodes in the list.
 //    Method Signature:
 //    public void reverse()
@@ -383,7 +379,7 @@ public class DoublyLinkedLists {
 //    Length: 5
 //    Doubly Linked List:
 //    5 <-> 4 <-> 3 <-> 2 <-> 1
-    public void reverse(){
+    public void reverse() {
         Node current = head;
         Node temp = null;
 
@@ -398,4 +394,33 @@ public class DoublyLinkedLists {
         head = tail;
         tail = temp;
     }
+
+
+//    DLL: Palindrome Checker ( ** Interview Question)
+//    Write a method to determine whether a given doubly linked list reads the same forwards and backwards.
+//    For example, if the list contains the values [1, 2, 3, 2, 1], then the method should return true, since the list is a palindrome.
+//    If the list contains the values [1, 2, 3, 4, 5], then the method should return false, since the list is not a palindrome.
+//    Method name: isPalindrome
+//    Return Type: boolean
+    public boolean isPalindrome(){
+        // Initialize and move pointers
+        Node headPointer = head;
+        Node tailPointer = tail;
+
+        while (headPointer != null && tailPointer != null && headPointer != tailPointer) {
+            // Compare values
+            if (headPointer.value != tailPointer.value) {
+                return false;
+            }
+
+            // Move pointers
+            headPointer = headPointer.next;
+            tailPointer = tailPointer.prev;
+        }
+
+        return true;
+
+}
+
+
 }
