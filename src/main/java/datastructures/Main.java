@@ -1,5 +1,7 @@
 package datastructures;
 
+import datastructures.LinkedLists.LinkedList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -90,6 +92,17 @@ public class Main {
 //        System.out.println("Reversed");
 //        reverseLinked.reverse();
 //        reverseLinked.printList();
+
+
+        LinkedList reverseLinked = new LinkedList(1);
+        reverseLinked.append(2);
+        reverseLinked.append(3);
+        reverseLinked.append(4);
+        System.out.println("normal: ");
+        reverseLinked.printList();
+        System.out.println("\nreversed: ");
+        reverseLinked.reverse();
+        reverseLinked.printList();
 
 
 
