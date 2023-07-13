@@ -86,6 +86,7 @@ public class Main {
         DoublyLinkedLists myDLL = new DoublyLinkedLists(0);
         myDLL.append(1);
         myDLL.append(2);
+        myDLL.getTail();
         myDLL.remove(1);
         myDLL.printList();
     }

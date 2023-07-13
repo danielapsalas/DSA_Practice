@@ -334,4 +334,30 @@ public class DoublyLinkedLists {
         return temp;
     }
 
+
+//    LEETCODE PROBLEMS
+
+
+//    DLL: Swap First and Last ( ** Interview Question)
+//    Swap First and Last Node Values in a Doubly Linked List.
+//    Given a doubly linked list, write a method called swapFirstLast() that swaps the values of the first and last nodes in the list.
+//    If the length of the list is less than 2, the method should not perform any operation.
+//    Function Signature:
+//    public void swapFirstLast()
+//    Input:
+//    The method is part of the DoublyLinkedList class, which has a head and a tail pointer, as well as a length attribute.
+//    Output:
+//    No explicit output is returned. However, the method should modify the doubly linked list such that the values of the first and last nodes are swapped.
+//    Constraints:
+//    The doubly linked list may be empty, have only one node, or have two or more nodes.
+    public void swapFirstLast(){
+        if(length < 2){
+            return;
+        }else{
+            Node temp = head;
+            head = tail;
+            tail = temp;
+        }
+    }
+
 }
