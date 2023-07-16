@@ -88,4 +88,24 @@ public class Stack {
         height++;//Increment the height attribute of the stack by 1.
     }
 
+//    Stack: Pop
+//    Implement a pop method that removes and returns the top node from the stack.
+//
+//    Return type: Node (the node that was popped from the stack)
+    public Node pop(){
+        if (height == 0){//If the height of the stack is 0, return null.
+            return null;
+        }
+        //Store the current top node in a temporary variable called temp.
+        Node temp = top;
+        //Update the top attribute to point to the next node in the stack.
+        top = temp.next;
+
+        //Set the next attribute of the temp node to null to disconnect it from the stack.
+        temp.next = null;
+        //Decrement the height attribute of the stack by 1.
+        height--;
+        //Return the temp node.
+        return temp;
+    }
 }
