@@ -64,4 +64,36 @@ public class Queue {
         //Increment the length attribute of the queue by 1.
         length++;
     }
+
+
+//    Queue: Dequeue
+//    Implement the dequeue method for the Queue class, which removes and returns the first node from the queue.
+//    Return type: Node (the node that has been dequeued)
+    public Node dequeue(){
+        //If the length of the queue is 0, return null.
+        if(length == 0){
+            return null;
+        }
+
+        //Create a temporary Node variable called temp and set it to the current first node.
+        Node temp = first;
+
+        //If the length of the queue is 1, set both the first and last pointers of the queue to null.
+        if(length == 1){
+            first = null;
+            last = null;
+        }
+
+        //If the length of the queue is greater than 1, perform the following tasks: a. Update the first pointer of the queue to point to the next node. b. Set the next attribute of the temp node to null.
+        if(length > 1){
+            first = temp.next;
+            temp.next = null;
+        }
+
+        //Decrement the length attribute of the queue by 1.
+        length--;
+
+        //Return the temp node.
+        return temp;
+    }
 }
