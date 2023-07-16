@@ -1,4 +1,4 @@
-package datastructures.StacksandQueues;
+package datastructures.StacksandQueues.Stacks;
 
 public class Stack {
     //A private Node attribute called top that points to the top node of the stack.
@@ -63,4 +63,29 @@ public class Stack {
         top = null;
         height = 0;
     }
+
+
+
+//    Stack: Push
+//    Implement a push method that adds a new node with a given value to the top of the stack.
+//
+//    Return type: void
+    public void push(int value){ //Accept an integer value as an argument, which will be the value of the new node.
+
+        Node newNode = new Node(value); //Create a new Node object called newNode with the given value.
+
+        //If the height of the stack is 0, set the top attribute to the newNode.
+        if(height == 0){
+            top = newNode;
+        }
+
+        //If the height of the stack is greater than 0, perform the following tasks:
+        if(height > 0){
+            newNode.next = top;//Set the next attribute of the newNode to the current top node.
+            top = newNode;//Update the top attribute to point to the newNode.
+        }
+
+        height++;//Increment the height attribute of the stack by 1.
+    }
+
 }
