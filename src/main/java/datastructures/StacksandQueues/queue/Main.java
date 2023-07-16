@@ -10,6 +10,7 @@ public class Main {
 
         //Enqueue
         Queue myQueue = new Queue(1);
+        myQueue.enqueue(2);
         myQueue.printQueue();
 
     }
