@@ -44,4 +44,19 @@ public class StacksLeetcode {
     public void push(T value){
         stackList.add(value);
     }
+
+
+//    Stack: Pop for a Stack That Uses an ArrayList ( ** Interview Question)
+//    Add a method to pop a value from the Stack implementation that we began in the last Coding Exercise.
+//
+//    Return type: T
+//
+//    Remember: This Stack implementation uses an ArrayList instead of a Linked List.
+    public T pop() {
+        if(isEmpty()){
+            return null;
+        }
+
+        return stackList.remove(stackList.size() - 1);
+    }
 }
