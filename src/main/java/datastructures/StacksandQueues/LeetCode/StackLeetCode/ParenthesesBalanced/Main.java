@@ -1,4 +1,4 @@
-package datastructures.StacksandQueues.LeetCode.StackLeetCode.Main.ParenthesesBalanced;
+package datastructures.StacksandQueues.LeetCode.StackLeetCode.ParenthesesBalanced;
 
 import datastructures.StacksandQueues.Stacks.Stack;
 

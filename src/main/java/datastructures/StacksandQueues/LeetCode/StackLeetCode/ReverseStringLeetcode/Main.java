@@ -1,4 +1,4 @@
-package datastructures.StacksandQueues.LeetCode.StackLeetCode.Main.ReverseStringLeetcode;
+package datastructures.StacksandQueues.LeetCode.StackLeetCode.ReverseStringLeetcode;
 
 import datastructures.StacksandQueues.Stacks.Stack;
 
