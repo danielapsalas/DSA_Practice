@@ -1,4 +1,4 @@
-package datastructures.StacksandQueues;
+package datastructures.StacksandQueues.LeetCode.StackLeetCode;
 
 import java.util.ArrayList;
 
